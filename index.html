@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ZQYnn's blog</title><meta name="author" content="ZQYnn"><meta name="copyright" content="ZQYnn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="ZQYnn&#39;s blog">
+<meta property="og:url" content="http://zqynn.github.io/index.html">
+<meta property="og:site_name" content="ZQYnn&#39;s blog">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zqynn.github.io/img/avatar.jpeg">
+<meta property="article:author" content="ZQYnn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zqynn.github.io/img/avatar.jpeg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://zqynn.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ZQYnn\'s blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-11-18 20:31:17'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="ZQYnn's blog"><span class="site-name">ZQYnn's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/dscsky/ds/" title="数据结构考研代码练习">数据结构考研代码练习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-05-24T07:00:00.000Z" title="Created 2020-05-24 15:00:00">2020-05-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Csky/">Csky</a></span></div><div class="content">第二章 线性表c语言中的链表回顾c中的链表是如何是现实的：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;struct NODE&#123;    int data; //数据域    struct NODE *next;  //指向自身的指针 指针域;&#125;;typedef struct NODE node;node *head;void Init()&#123;    head = (node *)malloc(sizeof(node));    node *cur = head, *s;  //cur 表示当前位置的结点指向 s 表示每次添 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/PATadvanced/solution/" title="PAT甲级题目整理分类"><img class="post-bg" src="https://blog1.zqynn.cn//csu/20200331214754.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PAT甲级题目整理分类"></a></div><div class="recent-post-info"><a class="article-title" href="/PATadvanced/solution/" title="PAT甲级题目整理分类">PAT甲级题目整理分类</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-31T16:00:00.000Z" title="Created 2020-04-01 00:00:00">2020-04-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/PAT-Advanced/">PAT Advanced</a></span></div><div class="content">PAT甲级题目所有题目整理汇总
+
+
+
+
+字符串类型题目1001  A+B Format计算 a+b, a+b 并以标准格式输出总和—-也就是说，从最低位开始每隔三位数加进一个逗号（千位分隔符），如果结果少于四位则不需添加。
+解题代码
+12345678910111213141516171819#include &lt;cstdio&gt;int a, b, sum, len, c[100];bool flag;int main()&#123;    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);    sum = a + b;    if (sum &lt; 0) sum = -sum, flag = true;    if (sum == 0) c[len++] = 0;    while(sum &gt; 0)&#123;        c[len ++] = sum % 10;        sum /= 10;    &#125;    if (flag) printf(&quot;-&quot;);    for (int i = len - ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/linux/linux/" title="Linux基础学习"><img class="post-bg" src="https://zqynn.oss-cn-beijing.aliyuncs.com/tec/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux基础学习"></a></div><div class="recent-post-info"><a class="article-title" href="/linux/linux/" title="Linux基础学习">Linux基础学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-02-12T16:00:00.000Z" title="Created 2020-02-13 00:00:00">2020-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">linux基础命令行学习整理
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/cpp/C++%E4%B8%AD%E5%AD%97%E7%AC%A6%E5%92%8C%E6%95%B0%E5%AD%97%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/" title="C++中字符和数字之间的转换">C++中字符和数字之间的转换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-02-04T09:04:21.000Z" title="Created 2020-02-04 17:04:21">2020-02-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-C/">C/C++</a></span></div><div class="content">C++中字符和数字之间的转换，遇到一些字符转换的一些整理
+  
+
+C++中字符和数字之间的转换最近遇到看书和做题遇到的一些关于字符串和数字转化之间的问题，做一个整理。
+sscanf 与 sprinf具体可以参考《算法笔记》p53页
+
+sscanf的使用
+sscanf  是将字符数组的内容以对应数字形式（也可以是字符串的形式, 本篇主要讨论字符与数字的转化）传输到n中（从左到右），例如：
+12345678910111213#include &lt;cstdio&gt;int main()&#123;    int n;    char c[100] = &quot;8160&quot;;    sscanf(c, &quot;%d&quot;, &amp;n);    printf(&quot;%d&quot;, n / 2); // 4080   /*    char c[100] = &quot;8160&quot;, t[20];    sscanf(c, &quot;%s&quot;, t);    printf(&quot;%s&quot;, t); // 8160   */  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Algorithm/Bintreestraverse/" title="二叉树的遍历以及从转化">二叉树的遍历以及从转化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-01-19T16:00:00.000Z" title="Created 2020-01-20 00:00:00">2020-01-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="content">二叉树遍历， 给定中序遍历和后序遍历（或前序）求出任意一种其他遍历的方式。  
+题目：
+给出后序遍历和中序遍历。 求出层序遍历
+输入
+12372 3 1 5 7 6 41 2 3 4 5 6 7
+
+输出
+14 1 6 3 5 7 2
+
+思路以及图示：
+
+根据给出后序遍历和中序遍历，构建一个二叉树
+
+
+通过bfs输出层序遍历的结点
+
+
+解题代码：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;queue&gt;#include &lt;algorithm&gt;using namespace std;const int N = 50;int n;struct node&#123;    int data;    node* lchild;    node* rchild;&#125;;int pre[N], in[N], post[N]; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/os/AlgorithmofBlanker/" title="银行家算法（C++）">银行家算法（C++）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-12-20T14:39:03.000Z" title="Created 2019-12-20 22:39:03">2019-12-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Operating-System/">Operating System</a></span></div><div class="content"> 银行家算法代码实现， 以及求出全部的安全序列。  
+银行家算法概述银行家算法概述银行家算法就是一种避免死锁的一种机制，能够让进程有效的合理的分配资源
+代码实现不说废话，代码实现方式 ，解析日后：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154#include &lt;iostream&gt;#include &lt;cstdio&gt ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Algorithm/templates/" title="算法基础模板题"><img class="post-bg" src="https://zqynn.oss-cn-beijing.aliyuncs.com/tec/dsal.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法基础模板题"></a></div><div class="recent-post-info"><a class="article-title" href="/Algorithm/templates/" title="算法基础模板题">算法基础模板题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-12-19T16:00:00.000Z" title="Created 2019-12-20 00:00:00">2019-12-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="content">在将近期学的模板放到到这里，日后整理出文章
+
+
+基础模板给出基础算法的模板题，以及算法的模板。
+快速排序图示：
+
+思路
+
+快速排序中首先找到 分界点
+通过分界点 x 实现划分区间 排序 让 x左边的值 小于x 游标的值大于x
+​    递归此过程实现排序
+
+注意：
+
+选择的分节点是任意的。注意边界的问题如果是 使用的是   quick_sort(a, l, i - 1), quick_sort(a, i , r); 这个边界，那么使用的 temp 的位置就是( l + r + 1) &#x2F; 2 注意上取整
+如果使用的是quick_sort(a, l, j), quick_sort(a, j + 1 , r); 这个边界 确定使用的 边界指的位置就是(l + r ) &#x2F; 2
+当给定的序列有序时，如果每次选择区间左端点进行划分，每次会将区间[L, R]划分成[L, L]和[L + 1, R]，那么相当于每次递归右半部分的区间长度只会减少1，所以就需要递归 n−1次了，时间复杂度会达到 n^2。但每次选择区间中点或者随机值时，划分的两个子区间长度会比较均匀，那么期望只会递归  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Algorithm/algorithmfunds3/" title="离散化">离散化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-10-27T16:00:00.000Z" title="Created 2019-10-28 00:00:00">2019-10-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="content"> 离散化的实现  
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;using namespace std;typedef pair&lt;int, int&gt; PII;const int N = 300010;int n, m;int a[N], s[N];vector&lt;int&gt; alls;vector&lt;PII&gt; add, query;int find(int x)&#123;    int l = 0, r = alls.size() - 1;    while (l &lt; r)    &#123;        int mid = l + ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Algorithm/AlgorithmofHighPrecision/" title="高精度计算（C++）">高精度计算（C++）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-10-20T16:00:00.000Z" title="Created 2019-10-21 00:00:00">2019-10-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="content">  C++中实现大整数的加减乘除的计算~  
+高精度计算大整数的加法计算
+大整数存储方法
+
+计算的值应该是反向存储在数组中，方便数组进位的计算~ 
+
+
+模拟加法计算的过程
+
+从末尾进行计算，如果存在 进位就给下一位加一进位计算，直到计算完成。
+
+
+代码实现：
+12345678910111213141516171819202122232425262728#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;vector&gt;using namespace std;//模拟大数相加的过程vector&lt;int&gt; add(vector&lt;int&gt; &amp;a, vector&lt;int&gt; &amp;b)&#123;    vector&lt;int&gt; ans;    int t = 0;    for (int i = 0; i &lt; a.size() || i &lt; b.size(); i++)&#123;        if (i &lt; a.size()) t += a[ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/Algorithm/quick&amp;mergeSort/" title="快速排序与归并排序算法">快速排序与归并排序算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-10-19T16:00:00.000Z" title="Created 2019-10-20 00:00:00">2019-10-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Algorithm/">Algorithm</a></span></div><div class="content">在之前的基础上将快速排序和归并排序重写形成了模板 在y 总那里学来的 ~  
+排序算法快速排序快速排序思想快速排序的思想：基于分治的思想  选择一个分界点  使分界点的左侧的值比它小，右侧的值比它大， 不满足则交换，递归直到数组有序。
+步骤
+快速排序算法的步骤：
+
+确定数组的分界点 一般为arr[l], arr[(i + l) / 2], arr[r] 或随机
+ 调整区间  假设边界点为x，小于等于x在x左边， 大于等于x的在x右边。
+递归执行此过程，直到数组的为有序的。
+
+
+
+代码实现
+结合以上的思路快速排序代码:
+1234567891011121314151617181920212223242526/*快速排序的代码模板的使用*/#include &lt;iostream&gt;#include &lt;cstdio&gt;using namespace std;const int N = 1e6 + 10;int n, q[N];// 以左边的值为边界点 进行排序void quick_sort(int q[], int l, int r)&#123;    if (l &gt;= ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ZQYnn</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ZQYnn"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:zqy81604152@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_42265429?type=blog" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/dscsky/ds/" title="数据结构考研代码练习">数据结构考研代码练习</a><time datetime="2020-05-24T07:00:00.000Z" title="Created 2020-05-24 15:00:00">2020-05-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/PATadvanced/solution/" title="PAT甲级题目整理分类"><img src="https://blog1.zqynn.cn//csu/20200331214754.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PAT甲级题目整理分类"/></a><div class="content"><a class="title" href="/PATadvanced/solution/" title="PAT甲级题目整理分类">PAT甲级题目整理分类</a><time datetime="2020-03-31T16:00:00.000Z" title="Created 2020-04-01 00:00:00">2020-04-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/linux/linux/" title="Linux基础学习"><img src="https://zqynn.oss-cn-beijing.aliyuncs.com/tec/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux基础学习"/></a><div class="content"><a class="title" href="/linux/linux/" title="Linux基础学习">Linux基础学习</a><time datetime="2020-02-12T16:00:00.000Z" title="Created 2020-02-13 00:00:00">2020-02-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/cpp/C++%E4%B8%AD%E5%AD%97%E7%AC%A6%E5%92%8C%E6%95%B0%E5%AD%97%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/" title="C++中字符和数字之间的转换">C++中字符和数字之间的转换</a><time datetime="2020-02-04T09:04:21.000Z" title="Created 2020-02-04 17:04:21">2020-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/Algorithm/Bintreestraverse/" title="二叉树的遍历以及从转化">二叉树的遍历以及从转化</a><time datetime="2020-01-19T16:00:00.000Z" title="Created 2020-01-20 00:00:00">2020-01-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Algorithm/"><span class="card-category-list-name">Algorithm</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-C/"><span class="card-category-list-name">C/C++</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Csky/"><span class="card-category-list-name">Csky</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Data-Structure-Algorithm/"><span class="card-category-list-name">Data Structure Algorithm</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Operating-System/"><span class="card-category-list-name">Operating System</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/PAT-Advanced/"><span class="card-category-list-name">PAT Advanced</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Summary/"><span class="card-category-list-name">Summary</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Summary/" style="font-size: 1.15em; color: rgb(59, 108, 66)">Summary</a><a href="/tags/life/" style="font-size: 1.15em; color: rgb(174, 134, 59)">life</a><a href="/tags/Algorithm/" style="font-size: 1.35em; color: rgb(106, 146, 35)">Algorithm</a><a href="/tags/Binary-tree/" style="font-size: 1.15em; color: rgb(87, 2, 48)">Binary tree</a><a href="/tags/sort/" style="font-size: 1.15em; color: rgb(26, 175, 55)">sort</a><a href="/tags/Data-Structure-Algorithm/" style="font-size: 1.45em; color: rgb(73, 185, 73)">Data Structure Algorithm</a><a href="/tags/PAT-Advanced/" style="font-size: 1.15em; color: rgb(14, 93, 37)">PAT Advanced</a><a href="/tags/C-C/" style="font-size: 1.25em; color: rgb(163, 77, 190)">C/C++</a><a href="/tags/Csky/" style="font-size: 1.15em; color: rgb(26, 106, 65)">Csky</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(22, 180, 36)">Linux</a><a href="/tags/Operating-System/" style="font-size: 1.15em; color: rgb(184, 122, 197)">Operating System</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="View More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">May 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">April 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">February 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">January 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/12/"><span class="card-archive-list-date">December 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/10/"><span class="card-archive-list-date">October 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/05/"><span class="card-archive-list-date">May 2019</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/04/"><span class="card-archive-list-date">April 2019</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">21</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">49.3k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-18T12:31:17.437Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By ZQYnn</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

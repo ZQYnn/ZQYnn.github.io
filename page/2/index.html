@@ -44,14 +44,14 @@
     toc: true,
     rightside: false,
   },
-  autoDarkmode: false
+  autoDarkmode: true
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: 'ZQYnn\'s blog',
   isPost: false,
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-11-18 21:28:56'
+  postUpdate: '2023-11-18 22:36:56'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -130,9 +130,28 @@
       }
       const t = saveToLocal.get('theme')
     
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -235,7 +254,24 @@ ltag&#x3D;0 表示lchild 指向左孩子latg&#x3D;1 表示lchild 指向前驱rta
 
 
 A节点左右孩子存在，ltag&#x3D;0，lchild指向左孩子B，rtag&#x3D;0 ，rchild指向右孩子C。   
-B节点左孩子存在 ltag&#x3D;0，lchild指向左孩子D ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/cpp/Linked/" title="通过C++中的引用建立链表">通过C++中的引用建立链表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-05-10T09:04:21.000Z" title="Created 2019-05-10 17:04:21">2019-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-C/">C/C++</a></span></div><div class="content">通过C++中的引用建立链表  
+B节点左孩子存在 ltag&#x3D;0，lchild指向左孩子D ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/DataStructure/Prim/" title="最小生成树的建立——Prim算法">最小生成树的建立——Prim算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-05-10T09:04:21.000Z" title="Created 2019-05-10 17:04:21">2019-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Data-Structure-Algorithm/">Data Structure Algorithm</a></span></div><div class="content">最小生成树的建立——Prim算法  
+概述生成树的概念
+要建立最小生成树，首先要知道什么是生成树，了解生成树的概念才可以假设在连通图G中有n个顶点， 将G中的n-1条边 构成无回路的连通图称为生成树。
+
+最小生成树的概念
+图的生成树不是唯一的，在一个图中可能存在多个生成树，将个边权值相加之和最小的生成树， 称为最小生成树。
+
+Prim算法
+思路：Prim算法将顶点分为两部分，U和V-U，U中的顶点代表当前生成最小生成树的顶点，V—U就是没有处理过的顶点，起始时将全部的顶点之间的边作为候选边，依次从中选取权值最小的边作为最小生成树的边，不断修正U，直到得到构成最小生成树全部的顶点。
+
+prim实现的过程设置关键数组
+设置lowcost数组来存储边的权值，如果lowcost[i]&#x3D;0表示 表名i就在U中，已经找构成最小生成树的点。
+closevertex数组表示构成最小生成树相邻的顶点，理解当前构成最小生成的前驱，这个具体在运行的结果中看到，一会在看到输出结果是详细解释。
+
+实现最小生成树的图解以下图为例  以V0为起始点图中为了方便观看省去了V：  
+初始化两个数组有：  
+
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/cpp/Linked/" title="通过C++中的引用建立链表">通过C++中的引用建立链表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-05-10T09:04:21.000Z" title="Created 2019-05-10 17:04:21">2019-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C-C/">C/C++</a></span></div><div class="content">通过C++中的引用建立链表  
 通过C++中的引用建立链表
 通过C++引用语法实现对链表的改动void change( int &amp;a, int &amp;b)change(a,b);int &amp;a 相当于a的别名，er int &amp;a  是双向的可用的在C语言我改变元&gt;素的值通常使用指针改变函数的值，通过传递其地址	
 
@@ -253,24 +289,7 @@ void CreateLink(linkednode &amp;L)
     linkednode s;
     L=(linkednode)malloc(sizeof(link));
     L-&gt;next=NULL;
-    for(int i=0;i&lt ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/DataStructure/Prim/" title="最小生成树的建立——Prim算法">最小生成树的建立——Prim算法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-05-10T09:04:21.000Z" title="Created 2019-05-10 17:04:21">2019-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Data-Structure-Algorithm/">Data Structure Algorithm</a></span></div><div class="content">最小生成树的建立——Prim算法  
-概述生成树的概念
-要建立最小生成树，首先要知道什么是生成树，了解生成树的概念才可以假设在连通图G中有n个顶点， 将G中的n-1条边 构成无回路的连通图称为生成树。
-
-最小生成树的概念
-图的生成树不是唯一的，在一个图中可能存在多个生成树，将个边权值相加之和最小的生成树， 称为最小生成树。
-
-Prim算法
-思路：Prim算法将顶点分为两部分，U和V-U，U中的顶点代表当前生成最小生成树的顶点，V—U就是没有处理过的顶点，起始时将全部的顶点之间的边作为候选边，依次从中选取权值最小的边作为最小生成树的边，不断修正U，直到得到构成最小生成树全部的顶点。
-
-prim实现的过程设置关键数组
-设置lowcost数组来存储边的权值，如果lowcost[i]&#x3D;0表示 表名i就在U中，已经找构成最小生成树的点。
-closevertex数组表示构成最小生成树相邻的顶点，理解当前构成最小生成的前驱，这个具体在运行的结果中看到，一会在看到输出结果是详细解释。
-
-实现最小生成树的图解以下图为例  以V0为起始点图中为了方便观看省去了V：  
-初始化两个数组有：  
-
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/DataStructure/BF%20KMP/" title="串的模式匹配算法(BF KMP及优化)">串的模式匹配算法(BF KMP及优化)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-04-15T09:04:21.000Z" title="Created 2019-04-15 17:04:21">2019-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Data-Structure-Algorithm/">Data Structure Algorithm</a></span></div><div class="content">串的模式匹配算法(BF KMP及优化)  
+    for(int i=0;i&lt ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/DataStructure/BF%20KMP/" title="串的模式匹配算法(BF KMP及优化)">串的模式匹配算法(BF KMP及优化)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2019-04-15T09:04:21.000Z" title="Created 2019-04-15 17:04:21">2019-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Data-Structure-Algorithm/">Data Structure Algorithm</a></span></div><div class="content">串的模式匹配算法(BF KMP及优化)  
 朴素的模式匹配算法
 串的模式匹配是查询主串中是否含有与之匹配的字串，有则返回从主串开始匹配位置后的第一次出现子串的位置，否则返回。
 
@@ -314,5 +333,5 @@ closevertex数组表示构成最小生成树相邻的顶点，理解当前构成
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Algorithm/"><span class="card-category-list-name">Algorithm</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-C/"><span class="card-category-list-name">C/C++</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Csky/"><span class="card-category-list-name">Csky</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Data-Structure-Algorithm/"><span class="card-category-list-name">Data Structure Algorithm</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Operating-System/"><span class="card-category-list-name">Operating System</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/PAT-Advanced/"><span class="card-category-list-name">PAT Advanced</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Summary/"><span class="card-category-list-name">Summary</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Summary/" style="font-size: 1.15em; color: rgb(38, 113, 121)">Summary</a><a href="/tags/life/" style="font-size: 1.15em; color: rgb(70, 70, 25)">life</a><a href="/tags/Algorithm/" style="font-size: 1.35em; color: rgb(109, 63, 18)">Algorithm</a><a href="/tags/Binary-tree/" style="font-size: 1.15em; color: rgb(90, 129, 19)">Binary tree</a><a href="/tags/sort/" style="font-size: 1.15em; color: rgb(101, 105, 172)">sort</a><a href="/tags/C-C/" style="font-size: 1.25em; color: rgb(154, 43, 141)">C/C++</a><a href="/tags/PAT-Advanced/" style="font-size: 1.15em; color: rgb(11, 175, 157)">PAT Advanced</a><a href="/tags/Data-Structure-Algorithm/" style="font-size: 1.45em; color: rgb(157, 124, 200)">Data Structure Algorithm</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(144, 91, 162)">Linux</a><a href="/tags/Operating-System/" style="font-size: 1.15em; color: rgb(170, 158, 93)">Operating System</a><a href="/tags/Csky/" style="font-size: 1.15em; color: rgb(117, 4, 57)">Csky</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="View More">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">May 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">April 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">February 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">January 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/12/"><span class="card-archive-list-date">December 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/10/"><span class="card-archive-list-date">October 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/05/"><span class="card-archive-list-date">May 2019</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/04/"><span class="card-archive-list-date">April 2019</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">21</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">49.3k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-18T13:28:56.156Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By ZQYnn</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Summary/" style="font-size: 1.15em; color: rgb(187, 101, 110)">Summary</a><a href="/tags/life/" style="font-size: 1.15em; color: rgb(154, 108, 176)">life</a><a href="/tags/Algorithm/" style="font-size: 1.35em; color: rgb(129, 20, 111)">Algorithm</a><a href="/tags/sort/" style="font-size: 1.15em; color: rgb(38, 190, 181)">sort</a><a href="/tags/Binary-tree/" style="font-size: 1.15em; color: rgb(164, 195, 52)">Binary tree</a><a href="/tags/Data-Structure-Algorithm/" style="font-size: 1.45em; color: rgb(102, 30, 107)">Data Structure Algorithm</a><a href="/tags/C-C/" style="font-size: 1.25em; color: rgb(112, 88, 196)">C/C++</a><a href="/tags/Csky/" style="font-size: 1.15em; color: rgb(70, 22, 29)">Csky</a><a href="/tags/PAT-Advanced/" style="font-size: 1.15em; color: rgb(120, 38, 169)">PAT Advanced</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(64, 25, 24)">Linux</a><a href="/tags/Operating-System/" style="font-size: 1.15em; color: rgb(138, 86, 82)">Operating System</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="View More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">May 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">April 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/02/"><span class="card-archive-list-date">February 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">January 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/12/"><span class="card-archive-list-date">December 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/10/"><span class="card-archive-list-date">October 2019</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/05/"><span class="card-archive-list-date">May 2019</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/04/"><span class="card-archive-list-date">April 2019</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">21</div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">49.3k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-18T14:36:56.656Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By ZQYnn</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
